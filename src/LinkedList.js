@@ -1,7 +1,21 @@
+import { Node } from "./Node.js";
+
 export class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
+  }
+
+  get size() {
+    let size = 0;
+    let current = this.head;
+
+    while (current) {
+      current = current.next;
+      size += 1;
+    }
+
+    return size;
   }
 
   append(node) {

@@ -108,4 +108,19 @@ export class LinkedList {
 
     return false;
   }
+
+  find(targetValue) {
+    let current = this.head;
+    let nodeIndex = 0;
+
+    while (current) {
+      if (current.value == targetValue) {
+        return nodeIndex;
+      }
+      current = current.next;
+      nodeIndex += 1;
+    }
+
+    return null;
+  }
 }

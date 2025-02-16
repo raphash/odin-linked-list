@@ -17,6 +17,12 @@ export class LinkedList {
   }
 
   append(node) {
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
+      return;
+    }
+
     if (!this.head) {
       this.head = node;
       return;
@@ -62,5 +68,25 @@ export class LinkedList {
     }
 
     return null;
+  }
+
+  pop() {
+    let current = this.head;
+
+    while (current) {
+      if (!current.next) {
+        this.head = null;
+        this.tail = null;
+        return;
+      }
+
+      if (current.next.next == null) {
+        current.next = null;
+        this.tail = current;
+        return;
+      }
+
+      current = current.next;
+    }
   }
 }

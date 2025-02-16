@@ -6,7 +6,7 @@ export class LinkedList {
     this.tail = null;
   }
 
-  get size() {
+  size() {
     let size = 0;
     let current = this.head;
 

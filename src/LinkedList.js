@@ -1,5 +1,3 @@
-import { Node } from "./Node.js";
-
 export class LinkedList {
   constructor() {
     this.head = null;
@@ -49,5 +47,20 @@ export class LinkedList {
 
     node.next = this.head;
     this.head = node;
+  }
+
+  at(targetIndex) {
+    let current = this.head;
+    let nodeIndex = 0;
+
+    while (current) {
+      if (targetIndex == nodeIndex) {
+        return current;
+      }
+      current = current.next;
+      nodeIndex += 1;
+    }
+
+    return null;
   }
 }
